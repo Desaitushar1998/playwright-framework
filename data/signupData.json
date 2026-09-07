@@ -1,0 +1,23 @@
+{
+  "accountInfo": {
+    "title": "Mr",
+    "password": "Test@1234",
+    "dobDay": "10",
+    "dobMonth": "5",
+    "dobYear": "1998",
+    "subscribeNewsletter": true,
+    "receiveOffers": true
+  },
+  "addressInfo": {
+    "firstName": "Test",
+    "lastName": "User",
+    "company": "Test QA",
+    "address1": "123 Test Address",
+    "address2": "Test Address 2",
+    "country": "India",
+    "state": "Maharashtra",
+    "city": "Pune",
+    "zipcode": "123456",
+    "mobileNumber": "9876543210"
+  }
+}
