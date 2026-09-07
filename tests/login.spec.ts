@@ -26,32 +26,32 @@ test.describe('Login', () => {
     await loginPage.deleteAccount();
     });
 
-  // for (const invalidCredential of loginData.invalidCredentials) {
-  //   test(`should reject login for unregistered email: ${invalidCredential.email}`, async ({ page }) => {
-  //     const homePage = new HomePage(page);
-  //     const loginPage = new LoginPage(page);
+  for (const invalidCredential of loginData.invalidCredentials) {
+    test(`should reject login for unregistered email: ${invalidCredential.email}`, async ({ page }) => {
+      const homePage = new HomePage(page);
+      const loginPage = new LoginPage(page);
 
-  //     await homePage.open();
-  //     await homePage.goToSignupLogin();
-  //     await loginPage.login(invalidCredential.email, invalidCredential.password);
+      await homePage.open();
+      await homePage.goToSignupLogin();
+      await loginPage.login(invalidCredential.email, invalidCredential.password);
 
-  //     const errorMessage = await loginPage.getLoginErrorMessage();
-  //     expect(errorMessage).toContain('incorrect');
-  //     expect(await loginPage.isLoginPageDisplayed()).toBeTruthy();
-  //   });
-  // }
+      const errorMessage = await loginPage.getLoginErrorMessage();
+      expect(errorMessage).toContain('incorrect');
+      expect(await loginPage.isLoginPageDisplayed()).toBeTruthy();
+    });
+  }
 
-  // test('should reject login with a valid email but wrong password', async ({ page }) => {
-  //   const account = await createNewAccount(page, signupData);
+  test('should reject login with a valid email but wrong password', async ({ page }) => {
+    const account = await createNewAccount(page, signupData);
 
-  //   const homePage = new HomePage(page);
-  //   const loginPage = new LoginPage(page);
+    const homePage = new HomePage(page);
+    const loginPage = new LoginPage(page);
 
-  //   await homePage.open();
-  //   await homePage.goToSignupLogin();
-  //   await loginPage.login(account.email, 'IncorrectPassword@999');
+    await homePage.open();
+    await homePage.goToSignupLogin();
+    await loginPage.login(account.email, 'IncorrectPassword@999');
 
-  //   const errorMessage = await loginPage.getLoginErrorMessage();
-  //   expect(errorMessage).toContain('incorrect');
-  // });
+    const errorMessage = await loginPage.getLoginErrorMessage();
+    expect(errorMessage).toContain('incorrect');
+  });
 });
